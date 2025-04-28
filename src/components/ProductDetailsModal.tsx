@@ -217,7 +217,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({
                 </View>
               </View>
 
-              <Image source={{ uri: `http://192.168.14.130:5000/${product.image}` }} style={styles.productImage} />
+              <Image source={{ uri: `http://192.168.1.113:5000/${product.image}` }} style={styles.productImage} />
 
               <View style={styles.contentContainer}>
                 <View style={styles.basicInfo}>

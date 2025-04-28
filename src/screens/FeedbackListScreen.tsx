@@ -37,7 +37,7 @@ import {
     const getFeedbacks = async () => {
       try {
         console.log("first",user?._id)
-        const res = await axios.get(`http://192.168.14.130:5000/feedback/${user?._id}`);
+        const res = await axios.get(`http://192.168.1.113:5000/feedback/${user?._id}`);
         setFeedbacks(res.data);
       } catch (err) {
         console.error('Error fetching feedbacks:', err.message);

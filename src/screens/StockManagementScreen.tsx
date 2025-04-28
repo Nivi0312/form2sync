@@ -32,7 +32,7 @@ const StockManagementScreen = ({ navigation }) => {
   const [stockData, setStockData] = useState<StockItem[]>([])
 
   const stockList = () => {
-    axios.get(`http://192.168.14.130:5000/stock?limit=10000&productName=${searchQuery}`)
+    axios.get(`http://192.168.1.113:5000/stock?limit=10000&productName=${searchQuery}`)
       .then(res => {
         console.log(res.data.stocks)
         setStockData(res.data.stocks)
@@ -73,7 +73,7 @@ const StockManagementScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.stockItem}>
         <View style={styles.stockImageContainer}>
           <Image
-            source={{ uri: `http://192.168.14.130:5000/${item.image}` }}
+            source={{ uri: `http://192.168.1.113:5000/${item.image}` }}
             style={styles.stockImage}
           />
           {(item.quantity < 6 && item.quantity > 0) && (

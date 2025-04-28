@@ -98,8 +98,8 @@ const StockAddScreen = () => {
 
     try {
       const url = stockToEdit
-        ? `http://192.168.14.130:5000/stock/${stockToEdit._id}`
-        : 'http://192.168.14.130:5000/stock';
+        ? `http://192.168.1.113:5000/stock/${stockToEdit._id}`
+        : 'http://192.168.1.113:5000/stock';
 
       const method = stockToEdit ? 'put' : 'post';
       console.log(form)

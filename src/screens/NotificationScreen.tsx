@@ -12,7 +12,7 @@ const NotificationScreen = () => {
 
     const fetchNotifications = async () => {
         try {
-            const response = await axios.get(`http://192.168.14.130:5000/notifications/${user._id}`);
+            const response = await axios.get(`http://192.168.1.113:5000/notifications/${user._id}`);
             setNotifications(response.data);
         } catch (error) {
             console.error('Failed to fetch notifications:', error);

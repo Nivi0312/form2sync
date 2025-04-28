@@ -2,8 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import session from 'express-session'; // Import session middleware
-import admin from 'firebase-admin';
-import serviceAccount from './form2sync-firebase-adminsdk-fbsvc-4c086af80e.json' assert { type: 'json' };
+
 import { router } from './routes/routes.js';
 import path from 'path'
 import { fileURLToPath } from 'url';
@@ -13,15 +12,7 @@ import http from 'http';
 import cors from 'cors'
 const app = express();
 
-// Firebase Admin SDK initialization
-try {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
-  console.log('Firebase Admin SDK initialized');
-} catch (error) {
-  console.error('Firebase Admin SDK initialization error:', error);
-}
+
 app.use(cors())
 // Session middleware
 app.use(

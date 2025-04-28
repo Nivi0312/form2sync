@@ -21,7 +21,7 @@ const HomeScreen = ({ navigation }: any) => {
     const [stockData, setStockData] = useState<StockItem[]>([])
 
     const stockList = () => {
-        axios.get(`http://192.168.14.130:5000/stock?limit=10000&productName=${searchQuery}`)
+        axios.get(`http://192.168.1.113:5000/stock?limit=10000&productName=${searchQuery}`)
             .then(res => {
                 console.log(res.data.stocks)
                 setStockData(res.data.stocks)
@@ -99,7 +99,7 @@ const HomeScreen = ({ navigation }: any) => {
                             return (
                                 <TouchableOpacity onPress={() => setSelectedItem(item)}>
                                     <View style={styles.itemWrapper}>
-                                        <Image style={styles.image} source={{ uri: `http://192.168.14.130:5000/${item.image}` }} />
+                                        <Image style={styles.image} source={{ uri: `http://192.168.1.113:5000/${item.image}` }} />
                                         <Text style={styles.itemText}>{item.productName}</Text>
                                         <Text style={styles.price}>₹ {item.price}</Text>
                                         <Text style={styles.itemText}>{item.farmName}</Text>

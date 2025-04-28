@@ -241,7 +241,7 @@ const SearchScreen = ({ route }) => {
         params.append('page', '1')
         params.append('limit', '50')
 
-        const response = await fetch(`http://192.168.14.130:5000/stock?${params.toString()}`)
+        const response = await fetch(`http://192.168.1.113:5000/stock?${params.toString()}`)
         const data = await response.json()
         console.log("data", data)
         if (response.ok) {
@@ -266,7 +266,7 @@ const SearchScreen = ({ route }) => {
       onPress={() => setSelectedItem(item)}
     >
       <Image
-        source={{ uri: `http://192.168.14.130:5000/${item.image}` }}
+        source={{ uri: `http://192.168.1.113:5000/${item.image}` }}
         style={[styles.stockImage, !isGridView && styles.stockImageList]}
       />
       {item.quantity <= 10 && (

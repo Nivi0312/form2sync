@@ -33,7 +33,7 @@ const LoginSCreen = ({ navigation }: any) => {
             Alert.alert('Error', 'Please fill all fields')
             return
         }
-        axios.post('http://192.168.14.130:5000/auth/login', user
+        axios.post('http://192.168.1.113:5000/auth/login', user
         ).then(res => {
             Alert.alert('Success', res.data.message)
             const decoded = decodeJWT(res.data.token);
@@ -42,7 +42,7 @@ const LoginSCreen = ({ navigation }: any) => {
             AsyncStorage.setItem('isLoggedIn', 'true');
             dispatch(loginSlice(decoded))
             navigation.navigate(user?.type === 'farmer' ? 'HomeScreen' : 'HomeScreen1');
-        })
+        }) 
             .catch(err => {
                 Alert.alert('Error', err.message);
                 console.log(err)

@@ -52,7 +52,7 @@ const CartScreen = () => {
 
   const renderCartItem = ({ item }: { item: CartItem }) => (
     <View style={styles.cartItem}>
-      <Image source={{ uri: `http://192.168.14.130:5000/${item.image}` }} style={styles.itemImage} />
+      <Image source={{ uri: `http://192.168.1.113:5000/${item.image}` }} style={styles.itemImage} />
       <View style={styles.itemInfo}>
         <Text style={styles.itemName}>{item.productName}</Text>
         <Text style={styles.itemPrice}>₹{item.price}/{item.unit}</Text>

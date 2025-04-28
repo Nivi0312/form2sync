@@ -24,7 +24,7 @@ export default function SalesAnalyticsScreen() {
 
   useEffect(() => {
     const encodedFarmName = encodeURIComponent(user?.farmName || '');
-    const url = `http://192.168.14.130:5000/orders/analytics/${encodedFarmName}`;
+    const url = `http://192.168.1.113:5000/orders/analytics/${encodedFarmName}`;
     axios.get(url)
       .then(res => setData(res.data))
       .catch(err => console.error(err))

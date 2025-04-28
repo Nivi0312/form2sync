@@ -23,17 +23,17 @@ const ChatScreen = ({ route }) => {
     const flatListRef = useRef(null);
 
     useEffect(() => {
-        axios.post('http://192.168.14.130:5000/chat/updateChat', { from: currentUser._id, to: selectedUser._id })
+        axios.post('http://192.168.1.113:5000/chat/updateChat', { from: currentUser._id, to: selectedUser._id })
             .then(res => console.log(res))
             .catch(err => console.log(err))
-        axios.post('http://192.168.14.130:5000/chat/updateChat', { from: selectedUser._id, to: currentUser._id })
+        axios.post('http://192.168.1.113:5000/chat/updateChat', { from: selectedUser._id, to: currentUser._id })
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }, [])
 
     const getMessages = () => {
         axios
-            .get(`http://192.168.14.130:5000/chat/msg/${selectedUser._id}`, {
+            .get(`http://192.168.1.113:5000/chat/msg/${selectedUser._id}`, {
                 params: { userId: currentUser._id },
             })
             .then(res => setMessages(res.data))
@@ -56,7 +56,7 @@ const ChatScreen = ({ route }) => {
             timestamp: new Date(),
         };
         console.log("first",messageData)
-        axios.post('http://192.168.14.130:5000/chat/sendMessage', messageData)
+        axios.post('http://192.168.1.113:5000/chat/sendMessage', messageData)
             .then(res => {
                 console.log(res)
                 setMessages(prev => [...prev, messageData]);

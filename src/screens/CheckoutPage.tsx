@@ -31,7 +31,7 @@ const CheckoutScreen = ({ navigation }) => {
 
     const placeOrder = async () => {
         try {
-            const res = await axios.post('http://192.168.14.130:5000/orders', {
+            const res = await axios.post('http://192.168.1.113:5000/orders', {
                 userId,
                 items: cartItems,
             });

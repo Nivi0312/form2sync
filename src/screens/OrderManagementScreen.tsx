@@ -112,7 +112,7 @@ const OrderManagementScreen = ({ navigation }) => {
       ? `user/${user?._id}`
       : `seller/${user?.farmName}`;
 
-    axios.get(`http://192.168.14.130:5000/orders/${url}`)
+    axios.get(`http://192.168.1.113:5000/orders/${url}`)
       .then(res => {
         // Assuming the response contains the order structure as shown
         const ordersWithFormattedItems = res.data.map((order: any) => ({
@@ -144,7 +144,7 @@ const OrderManagementScreen = ({ navigation }) => {
 
   const handleStatusChange = async (orderId, status) => {
     try {
-      const res = await axios.patch(`http://192.168.14.130:5000/orders/seller/${orderId}/status`, { status, farmName: user?.farmName });
+      const res = await axios.patch(`http://192.168.1.113:5000/orders/seller/${orderId}/status`, { status, farmName: user?.farmName });
       Alert.alert('Status updated to: ' + res.data.order.status);
       getOrders();
     } catch (err) {
@@ -155,7 +155,7 @@ const OrderManagementScreen = ({ navigation }) => {
   const handleCancel = async (orderId) => {
     if (user?.type === 'customer') {
       try {
-        await axios.patch(`http://192.168.14.130:5000/orders/user/${orderId}/cancel?userId=${user?._id}`);
+        await axios.patch(`http://192.168.1.113:5000/orders/user/${orderId}/cancel?userId=${user?._id}`);
         getOrders();
       } catch (err) {
         console.error('Cancel failed:', err.response?.data?.message || err.message);

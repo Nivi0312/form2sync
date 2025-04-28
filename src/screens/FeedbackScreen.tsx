@@ -27,7 +27,7 @@ const FeedbackScreen = ({ route, navigation }) => {
             return;
         }
         try {
-            axios.post(`http://192.168.14.130:5000/feedback`, { userId: userId, userName: from, recieverId: to, message: comments, rating: selected })
+            axios.post(`http://192.168.1.113:5000/feedback`, { userId: userId, userName: from, recieverId: to, message: comments, rating: selected })
                 .then(res => {
                     Alert.alert('Feedback added Successfully')
                     navigation.navigate('orderManagementScreen')

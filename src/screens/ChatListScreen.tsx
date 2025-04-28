@@ -11,7 +11,7 @@ const ChatListScreen = ({ navigation }) => {
 
     const fetchChatUsers = async () => {
         try {
-            const url = `http://192.168.14.130:5000/chat/list/${user._id}`;
+            const url = `http://192.168.1.113:5000/chat/list/${user._id}`;
             const res = await axios.get(url);
             setChatUsers(res.data[0].chatList);
         } catch (err) {

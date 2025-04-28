@@ -1,6 +1,7 @@
 import Stock from '../models/StockSchema.js';
 
 export const createStock = async (req, res) => {
+    console.log(req.body);
     const { productName, quantity, price, farmName, description, category, userId } = req.body;
     const image = `uploads/${req.file.filename}`;
     try {

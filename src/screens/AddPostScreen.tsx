@@ -88,7 +88,7 @@ const AddPostScreen = () => {
         });
 
         try {
-            const res = await axios.post('http://192.168.14.130:5000/ad', postForm, {
+            const res = await axios.post('http://192.168.1.113:5000/ad', postForm, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
 

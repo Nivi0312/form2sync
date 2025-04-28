@@ -23,7 +23,7 @@ const AdListScreen = ({ navigation }) => {
 
     const fetchAds = async () => {
         try {
-            const response = await axios.get('http://192.168.14.130:5000/ad');
+            const response = await axios.get('http://192.168.1.113:5000/ad');
             setAds(response.data);
             setFilteredAds(response.data);
         } catch (error) {
@@ -38,7 +38,7 @@ const AdListScreen = ({ navigation }) => {
                 text: 'Delete',
                 onPress: async () => {
                     try {
-                        await axios.delete(`http://192.168.14.130:5000/ad/${adId}`);
+                        await axios.delete(`http://192.168.1.113:5000/ad/${adId}`);
                         fetchAds(); // refresh after delete
                     } catch (err) {
                         console.error('Delete failed:', err);

@@ -23,7 +23,7 @@ const RegisterScreen = ({ navigation }: any) => {
         }
         const { state, city, country, village, ...restUser } = user;
 
-        axios.post('http://192.168.14.130:5000/auth/signup', {
+        axios.post('http://192.168.1.113:5000/auth/signup', {
             ...restUser,
             address: { state, city, country, village }
         }).then(res => {
